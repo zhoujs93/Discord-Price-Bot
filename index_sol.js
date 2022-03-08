@@ -3,15 +3,15 @@ const axios = require('axios')
 const Discord = require('discord.js')
 const client = new Discord.Client()
 
-const coinId = 'krill';
+const coinId = 'SOL';
 const guildId = '914679516562067497';
-const botSecret = 'OTQ2Njk2ODUzOTE3OTQ1OTM3.YhieJg.IsukZMKJqucage-6HBqnd5KbKYk';
+const botSecret = 'OTQ3MDE4MDcxMTI4ODE3NzI1.YhnJTg.nstbO3h2kuFHVcqJBa04055eNgc';
 
 function getPrices() {
 
 
 	// API for price data.
-	axios.get(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=krill`).then(res => {
+	axios.get(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=solana`).then(res => {
 		// If we got a valid response
 		if(res.data && res.data[0].current_price && res.data[0].price_change_percentage_24h) {
 			let currentPrice = res.data[0].current_price || 0 // Default to zero
@@ -25,7 +25,7 @@ function getPrices() {
 				}
 			})
 
-			client.guilds.find(guild => guild.id === process.env.SERVER_ID).me.setNickname(`KRILL ${process.env.CURRENCY_SYMBOL}${(currentPrice).toLocaleString().replace(/,/g,process.env.THOUSAND_SEPARATOR)}`)
+			client.guilds.find(guild => guild.id === process.env.SERVER_ID).me.setNickname(`SOL ${process.env.CURRENCY_SYMBOL}${(currentPrice).toLocaleString().replace(/,/g,process.env.THOUSAND_SEPARATOR)}`)
 
 			console.log('Updated price to', currentPrice)
 		}
@@ -43,6 +43,6 @@ client.on('ready', () => {
 	// Ping the server and set the new status message every x minutes. (Minimum of 1 minute)
 	setInterval(getPrices, Math.max(1, process.env.MC_PING_FREQUENCY || 1) * 60 * 1000)
 })
-// https://discord.com/api/oauth2/authorize?client_id=946696853917945937&permissions=0&scope=bot%20applications.commands
+// https://discord.com/api/oauth2/authorize?client_id=947018071128817725&permissions=0&scope=bot%20applications.commands
 // Login to Discord
 client.login(process.env.DISCORD_TOKEN)
