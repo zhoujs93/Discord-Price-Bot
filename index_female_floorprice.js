@@ -5,7 +5,7 @@ const client = new Discord.Client()
 
 const coinId = 'Female Price';
 const guildId = '914679516562067497';
-const botSecret = 'OTUzMjIxNjEzNzI4NDUyNjA4.YjBazg.AfH-ltd2N4ow5fMaJnlYfgrHNLs';
+const botSecret = '';
 
 function getPrices() {
 
@@ -45,6 +45,6 @@ client.on('ready', () => {
 	// Ping the server and set the new status message every x minutes. (Minimum of 1 minute)
 	setInterval(getPrices, Math.max(1, process.env.MC_PING_FREQUENCY || 1) * 60 * 1000)
 })
-// https://discord.com/api/oauth2/authorize?client_id=947030076451610704&permissions=0&scope=bot%20applications.commands
+// https://discord.com/api/oauth2/authorize?client_id=953221613728452608&permissions=0&scope=bot%20applications.commands
 // Login to Discord
 client.login(process.env.DISCORD_TOKEN)

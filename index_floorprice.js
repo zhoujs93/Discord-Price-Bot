@@ -5,7 +5,7 @@ const client = new Discord.Client()
 
 const coinId = 'Floor Price';
 const guildId = '914679516562067497';
-const botSecret = 'OTQ3MDMwMDc2NDUxNjEwNzA0.YhnUfQ.UxaVovhsdgL9RW38QSRKadKLAGw';
+const botSecret = 'OTQ3MDMwMDc2NDUxNjEwNzA0.YhnUfQ.CTr7W19SLyddcXFuS-9VPzBe40E';
 
 function getPrices() {
 
